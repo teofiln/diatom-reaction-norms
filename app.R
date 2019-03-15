@@ -249,7 +249,7 @@ server <- function(input, output) {
       mutate(transfer=paste("transfer", str_extract(transfer, regex("\\d")))) %>% 
       group_by(sample, strain, replicate, transfer)
     
-    pp <- ggplot(data=dd, aes(x=day, y=!!wanted_y, colour=as.character(treatment))) +
+    pp <- ggplot(data=dd, aes(x=day, y=!!wanted_y, colour=treatment)) +
       scale_color_viridis(end = 0.9, discrete = TRUE, option= "B") +
       geom_point(size=2.5, pch=21) + 
       # geom_text(aes(label=Fold_change), size=3, nudge_x = 0.5, color="black") +
@@ -307,7 +307,7 @@ server <- function(input, output) {
         mutate(replicate=paste("replicate", replicate)) %>% 
         mutate(transfer=paste("transfer", str_extract(transfer, regex("\\d"))))
       
-      ss <- ggplot(slopes_filtered, aes(x=treatment, y=estimate, color=as.character(treatment), shape=replicate)) +
+      ss <- ggplot(slopes_filtered, aes(x=treatment, y=estimate, color=treatment, shape=replicate)) +
         geom_hline(aes(yintercept=0), color="red", linetype=2) +
         geom_point(alpha=.8, size=2, stroke=1.5) +
         scale_shape_manual(values=21:23) +
@@ -376,10 +376,10 @@ server <- function(input, output) {
       }
     }
     
-    ms <- ggplot(slopes_sum, aes(x=treatment, y=mean_slope, color=as.character(treatment))) +
+    ms <- ggplot(slopes_sum, aes(x=treatment, y=mean_slope, color=treatment)) +
       geom_hline(aes(yintercept=0), color="red", linetype=2) +
       geom_point(alpha=.8, size=2, stroke=1.5) +
-      geom_errorbar(data=slopes_sum, aes(x=treatment, y=mean_slope, ymin=mean_slope-sd_slope, ymax=mean_slope+sd_slope, color=as.character(treatment)), width=.1) +
+      geom_errorbar(data=slopes_sum, aes(x=treatment, y=mean_slope, ymin=mean_slope-sd_slope, ymax=mean_slope+sd_slope, color=treatment), width=.1) +
       # scale_fill_viridis(end = 0.9, discrete = TRUE, option= "B") +
       scale_color_viridis(end = 0.9, discrete = TRUE, option= "B") +
       labs(y="Slope of log(RFU) by day", x="Treatment")
