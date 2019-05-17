@@ -57,8 +57,9 @@ cols_to_gather <- colnames(all_plates[[1]])[2:ncol(all_plates[[1]])]
       year, month, day, sep = "-"
     ))) %>%
     select(-year,-month,-day) %>%
-    mutate(day = as.numeric(date - min(date))) %>%
-    mutate(replicate = str_extract(plate_name, regex("\\d{1}")))
+    mutate(day = as.numeric(date - min(date))) 
+#%>%
+#    mutate(replicate = str_extract(plate_name, regex("\\d{1}")))
 )
 
 # join with meta data table
