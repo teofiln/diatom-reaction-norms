@@ -26,23 +26,22 @@ plate_names <- basename(files)
 # read the files and name the data frames with info from file names
 all_plates <- map(files, read_csv)
 names(all_plates) <- plate_names
-cols_to_gather <- colnames(all_plates[[1]])[2:ncol(all_plates[[1]])]
 
 # get summary stats
 (
   all_plates_summarised <-
     bind_rows(all_plates, .id = "file_name") %>%
     group_by(file_name) %>%
-    gather(well, Local_read, cols_to_gather) %>%
+    gather(well, Local_read, -file_name, -`X Read #`, -`Y Read #`) %>%
     select(file_name, well, Local_read) %>%
     group_by(file_name, well) %>%
     summarise_at(
       "Local_read",
-      funs(
-        "Mean" = mean(., na.rm=TRUE),
-        "SD" = sd(., na.rm=TRUE),
-        "Median" = median(., na.rm=TRUE),
-        "Sum" = sum(., na.rm=TRUE)
+      list(
+        "Mean" = ~mean(., na.rm=TRUE),
+        "SD" = ~sd(., na.rm=TRUE),
+        "Median" = ~median(., na.rm=TRUE),
+        "Sum" = ~sum(., na.rm=TRUE)
       )
     ) %>%
     # parse the info from file name to get plate name, date and transfer
@@ -70,3 +69,4 @@ dd <-
 
 write_csv(dd, path = paste("./data/measurements/", "all_data", ".csv", sep = ""))
 save(dd, file = paste("./data/measurements/", "all_data", ".Rsave", sep = ""))
+
