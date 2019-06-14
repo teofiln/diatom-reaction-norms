@@ -1,0 +1,13 @@
+plate_name,sample,strain,treatment,row,column,well,replicate,vessel_type
+r1p19,ccmp1335,T. pseudonana,8ppt-P,A,1,A1,1,plate
+r1p19,ccmp1335,T. pseudonana,8ppt-P,A,2,A2,2,plate
+r1p19,ccmp1335,T. pseudonana,8ppt-P,A,3,A3,3,plate
+r1p19,ccmp1335,T. pseudonana,24ppt-P,A,4,A4,1,plate
+r1p19,ccmp1335,T. pseudonana,24ppt-P,A,5,A5,2,plate
+r1p19,ccmp1335,T. pseudonana,24ppt-P,A,6,A6,3,plate
+flask,ccmp1335,T. pseudonana,8ppt-F,A,1,A1,1,flask
+flask,ccmp1335,T. pseudonana,8ppt-F,A,2,A2,2,flask
+flask,ccmp1335,T. pseudonana,8ppt-F,A,3,A3,3,flask
+flask,ccmp1335,T. pseudonana,24ppt-F,A,4,A4,1,flask
+flask,ccmp1335,T. pseudonana,24ppt-F,A,5,A5,2,flask
+flask,ccmp1335,T. pseudonana,24ppt-F,A,6,A6,3,flask

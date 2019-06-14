@@ -21,7 +21,7 @@ source("scripts/make-transfer-in-session.R")
 
 # if running locally (without dropbox), comment the two lines above and uncomment the four lines below. best to use absolute paths
 root_path <- getwd()
-source(paste(root_path, "/data/prepare-data.R", sep=""))
+source(paste(root_path, "/data/prep-data-plates-or-tubes.R", sep=""))
 source(paste(root_path, "/data/calculate-slopes.R", sep=""))
 slopes <- read_csv(paste(root_path, "/data/measurements/slopes.csv", sep=""))
 dd <- read_csv(paste(root_path, "/data/measurements/all_data.csv", sep=""))
