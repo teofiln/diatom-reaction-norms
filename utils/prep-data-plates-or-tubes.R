@@ -81,7 +81,8 @@ names(all_plates) <- plate_names
       year, month, day, sep = "-"
     ))) %>%
     select(-year,-month,-day) %>%
-    mutate(day = as.numeric(date - min(date))) 
+    mutate(day = as.numeric(date - min(date))) %>% 
+    drop_na
 )
 
 # join with meta data table

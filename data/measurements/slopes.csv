@@ -1,13 +1,1 @@
-sample,strain,treatment,replicate,transfer,term,estimate,std.error,statistic,p.value
-ccmp1335,T. pseudonana,8ppt-P,1,t1,day_per_transfer,-0.0010293361691116774,NaN,NaN,NaN
-ccmp1335,T. pseudonana,8ppt-P,2,t1,day_per_transfer,0.23533029688575557,NaN,NaN,NaN
-ccmp1335,T. pseudonana,8ppt-P,3,t1,day_per_transfer,0.10617985204122891,NaN,NaN,NaN
-ccmp1335,T. pseudonana,24ppt-P,1,t1,day_per_transfer,1.3966992040441413,NaN,NaN,NaN
-ccmp1335,T. pseudonana,24ppt-P,2,t1,day_per_transfer,1.4112220842667396,NaN,NaN,NaN
-ccmp1335,T. pseudonana,24ppt-P,3,t1,day_per_transfer,1.5720738316123681,NaN,NaN,NaN
-ccmp1335,T. pseudonana,8ppt-F,1,t1,day_per_transfer,0.3987054382216034,NaN,NaN,NaN
-ccmp1335,T. pseudonana,8ppt-F,2,t1,day_per_transfer,0.5233301527504366,NaN,NaN,NaN
-ccmp1335,T. pseudonana,8ppt-F,3,t1,day_per_transfer,0.6823130351238241,NaN,NaN,NaN
-ccmp1335,T. pseudonana,24ppt-F,1,t1,day_per_transfer,1.1517547117897233,NaN,NaN,NaN
-ccmp1335,T. pseudonana,24ppt-F,2,t1,day_per_transfer,1.3225394995756559,NaN,NaN,NaN
-ccmp1335,T. pseudonana,24ppt-F,3,t1,day_per_transfer,1.3616204596145198,NaN,NaN,NaN
+sample,strain,treatment,replicate,transfer,data,fit

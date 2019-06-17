@@ -5,6 +5,7 @@ data_path <- list.files(path = "./data", pattern = "all_data.csv", full.names = 
 dd <- read_csv(data_path)
 
 slopes <- dd %>% 
+  drop_na() %>% 
   group_by(sample, strain, treatment, replicate, transfer) %>% 
   mutate(day_per_transfer=row_number()) %>% 
   filter(day_per_transfer %in% 2:6) %>% 
